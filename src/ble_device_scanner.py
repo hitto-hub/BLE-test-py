@@ -4,7 +4,7 @@ from bleak import BleakScanner
 # runという非同期関数を定義
 async def run():
     # BLEデバイスをスキャンし、発見したデバイスのリストを取得
-    devices = await BleakScanner.discover()
+    devices = await BleakScanner.discover(return_adv=True)
     # 発見したデバイスを1つずつループし、デバイス情報を表示
     for d in devices:
         print(d)
